@@ -32,6 +32,7 @@ phases:
       - python -m pip install --upgrade --force pip
       - wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add
       - cp sources.txt /etc/apt/sources.list
+      - wget -q -O - https://apt.corretto.aws/corretto.key | sudo apt-key add -
       - apt-get update && apt-get -y install jq  && pip install --upgrade snapd pytest
       - sudo snap install aws-cli --channel=v2/stable --classic
   pre_build:
